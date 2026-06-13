@@ -1,15 +1,6 @@
-# LSNP (Lightweight Social Networking)### Basic Usage
+# LSNP (Lightweight Social Networking Protocol)
 
 This is a Python implementation of the Lightweight Social Networking Protocol (LSNP).
-
-```bash
-# Run the client with a username (auto-detects IP)
-python lsnp_client.py alice
-
-# Run with verbose mode (shows all protocol messages)
-python lsnp_client.py alice --verbose
-
-```Implementation
 
 ## Features
 
@@ -24,7 +15,7 @@ python lsnp_client.py alice --verbose
 
 ## File Structure
 
-```
+```text
 ├── lsnp_client.py          # Main LSNP client implementation
 ├── peer.py                 # UDP networking layer
 ├── protocol.py             # Message formatting and parsing
@@ -59,6 +50,7 @@ python lsnp_client.py bob --ip 192.168.1.101 --port 50999
 ```
 
 ### Testing with Multiple Clients
+
 Open multiple terminal windows on different devices on the same subnet and run different users:
 
 **Terminal 1:**
@@ -81,6 +73,7 @@ python lsnp_client.py charlie
 Once the client is running, you can use these commands:
 
 ### Help System
+
 - `help` - Show available help categories
 - `help <category>` - Show detailed help for specific category
   - `help system` - Basic system commands
@@ -93,6 +86,7 @@ Once the client is running, you can use these commands:
   - `help files` - File transfer system
 
 ### System Commands
+
 - `status` - Show client status (peers, followers, etc.)
 - `peers` - List all discovered peers
 - `discover` - Actively discover peers on the network
@@ -100,6 +94,7 @@ Once the client is running, you can use these commands:
 - `quit` or `exit` - Exit the client
 
 ### Social Features
+
 - `post <message>` - Send a public post
 - `posts` - Show recent posts from followed users
 - `likeable` - Show posts you can like with copy-pasteable commands
@@ -112,6 +107,7 @@ Once the client is running, you can use these commands:
 - `view <user>` - View all posts and DMs with a user
 
 ### Group Management
+
 - `groups` - List all your groups
 - `creategroup <id> <name> <members>` - Create new group
 - `addtogroup <id> <members>` - Add members to existing group
@@ -120,11 +116,13 @@ Once the client is running, you can use these commands:
 - `leavegroup <id>` - Leave a group
 
 ### Profile Management
+
 - `setstatus <status>` - Update your status message
 - `saveavatar <filepath>` - Set profile picture from image file
 - `viewavatar <user>` - View avatar information for a user
 
 ### File Sharing
+
 - `sendfile <user_id> <filepath> [description]` - Send a file
 - `offers` - List pending file offers
 - `accept <file_id>` - Accept a file offer
@@ -153,6 +151,7 @@ The LIKE system allows you to express appreciation for posts from users you foll
 When someone likes your post, you'll see: `alice likes your post [Hello everyone!]`
 
 ### Games
+
 - `games` - List active games
 - `game <opponent_user_id>` - Start a tic-tac-toe game
 - `move <game_id> <position>` - Make a move (position 1-9)
@@ -186,14 +185,10 @@ python lsnp_client.py alice
 - UDP port 50999 must be available
 - Firewall should allow UDP broadcast and unicast on port 50999
 
-## AI Usage Policy
-All AI generated code and documentations are properly reviewed and tested before being submitted. In addition to that,
-the codebase is refined to fit the RFC and rubrics. AI was also used in helping us understand what functions and core
-features that the LSNP must have based on the given specs.
+## Debug Mode
 
-
-### Debug Mode
 Always use `--verbose` for debugging:
+
 ```bash
 python lsnp_client.py alice --verbose
 ```
